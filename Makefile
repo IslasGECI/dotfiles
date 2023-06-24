@@ -5,4 +5,4 @@ install:
 	curl -L https://nixos.org/nix/install | sh -s -- --daemon
 	echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-	nix develop --command neofetch
+	nix develop "github:IslasGECI/pde" --command neofetch
