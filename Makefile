@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 install:
 	cp .tmux.conf /etc/tmux.conf
 	mkdir --parents /etc/profile.d/
