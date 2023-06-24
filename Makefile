@@ -10,3 +10,4 @@ install:
 	fi
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
 	nix develop "github:IslasGECI/pde" --command neofetch
+	git config --global --add safe.directory '*'
