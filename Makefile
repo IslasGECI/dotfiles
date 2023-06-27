@@ -1,9 +1,7 @@
 SHELL := /bin/bash
 
 install:
-	cp .tmux.conf /etc/tmux.conf
-	mkdir --parents /etc/profile.d/
-	cp .bash_aliases /etc/profile.d/bash_aliases.sh
+	cp --force --recursive etc/. /etc
 	@if [ ! -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ] ; then \
 		curl -L https://nixos.org/nix/install | sh -s -- --daemon ; \
 		echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf ; \
