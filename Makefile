@@ -7,5 +7,5 @@ install:
 		echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf ; \
 	fi
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' && \
-	nix develop "github:IslasGECI/pde" --command neofetch
+	nix develop "github:IslasGECI/pde" --command nvim --version
 	git config --global --add safe.directory '*'
