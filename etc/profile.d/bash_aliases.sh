@@ -4,3 +4,11 @@ alias run-dev='docker run --env BITBUCKET_USERNAME --env BITBUCKET_PASSWORD --in
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
+init_tmux() {
+ 	tmux new -d -s "$1"
+	tmux new-window -t "$1:1"
+	tmux new-window -t "$1:2"
+	tmux send-keys -t "$1:1" "docker compose run islasgeci" ENTER
+	tmux send-keys -t "$1:2" "lsp-nvim" ENTER
+	tmux attach -t "$1"
+}
