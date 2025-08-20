@@ -7,8 +7,8 @@ alias vim=nvim
 init_tmux() {
  	tmux new -d -s "$1"
 	tmux new-window -t "$1:1"
-	tmux new-window -t "$1:vim" -n "vim"
+	tmux new-window -t "$1:2" -n "vim"
 	tmux send-keys -t "$1:1" "docker compose run islasgeci" ENTER
-	tmux send-keys -t "$1:2" "lsp-nvim" ENTER
+	tmux send-keys -t "$1:vim" "lsp-nvim" ENTER
 	tmux attach -t "$1"
 }
